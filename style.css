@@ -1,0 +1,763 @@
+:root {
+    --primary: #0077b6; /* أزرق مائي قوي */
+    --secondary: #03045e; /* كحلي ملكي */
+    --cyan: #00b4d8; /* سماوي */
+    --light: #f8f9fa;
+    --white: #ffffff;
+    --whatsapp: #25d366;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body { background: var(--white); overflow-x: hidden; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Navbar */
+.navbar {
+    background: rgba(255,255,255,0.98);
+    padding: 15px 0;
+    position: fixed; width: 100%; top: 0; z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.nav-flex { display: flex; justify-content: space-between; align-items: center; }
+
+.logo { display: flex; align-items: center; gap: 10px; }
+.drop-icon {
+    font-size: 2rem; color: var(--primary);
+    filter: drop-shadow(0 0 5px rgba(0,119,182,0.3));
+}
+.logo-txt { display: flex; flex-direction: column; }
+.brand { font-weight: 900; font-size: 1.4rem; color: var(--secondary); line-height: 1; }
+.tag { font-size: 0.75rem; color: #777; font-weight: 600; }
+
+.nav-links { display: flex; list-style: none; gap: 30px; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--secondary); font-weight: 700; transition: var(--transition); }
+.nav-links a:hover { color: var(--primary); }
+
+.nav-btn {
+    background: var(--primary); color: white !important;
+    padding: 10px 25px; border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,119,182,0.2);
+}
+
+/* Hero Section */
+.hero {
+    padding: 160px 0 100px;
+    background: radial-gradient(circle at top right, #eef7fb, #ffffff);
+}
+
+.hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: center; }
+
+.hero-badge {
+    background: rgba(0, 180, 216, 0.1); color: var(--cyan);
+    padding: 6px 15px; border-radius: 50px; font-weight: 700; font-size: 0.85rem;
+    display: inline-block; margin-bottom: 20px;
+}
+
+.hero h1 { font-size: 3.2rem; font-weight: 900; color: var(--secondary); line-height: 1.2; margin-bottom: 20px; }
+.cyan { color: var(--cyan); }
+
+.hero p { font-size: 1.15rem; color: #555; line-height: 1.8; margin-bottom: 40px; }
+
+.hero-actions { display: flex; gap: 15px; flex-wrap: wrap; }
+
+.btn {
+    padding: 15px 35px; border-radius: 50px; text-decoration: none;
+    font-weight: 800; font-size: 1.1rem; display: flex; align-items: center; gap: 10px;
+    transition: var(--transition);
+}
+
+.call-btn { background: var(--secondary); color: white; box-shadow: 0 10px 20px rgba(3,4,94,0.2); }
+.call-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(3,4,94,0.3); }
+
+.wa-btn { background: var(--whatsapp); color: white; box-shadow: 0 10px 20px rgba(37,211,102,0.2); }
+.wa-btn:hover { transform: translateY(-3px); }
+
+.hero-img img {
+    width: 100%; border-radius: 30px;
+    box-shadow: 30px 30px 0 var(--light);
+}
+
+/* Stats Bar */
+.stats-bar { background: var(--secondary); color: white; padding: 40px 0; }
+.stats-flex { display: flex; justify-content: space-around; text-align: center; flex-wrap: wrap; gap: 20px; }
+.stat .num { font-size: 2rem; font-weight: 900; display: block; color: var(--cyan); }
+.stat .txt { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+/* Features */
+.features { padding: 100px 0; background: #fff; }
+.sec-title { text-align: center; font-size: 2.4rem; font-weight: 900; color: var(--secondary); margin-bottom: 60px; }
+
+.feat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.feat-card {
+    padding: 40px 30px; background: var(--white); border-radius: 20px;
+    border: 1px solid #eee; transition: var(--transition); text-align: center;
+}
+.feat-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-color: var(--cyan); }
+
+.icon-box {
+    width: 70px; height: 70px; background: rgba(0, 180, 216, 0.1);
+    color: var(--cyan); border-radius: 20px; font-size: 2rem;
+    display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;
+}
+
+/* Districts */
+.districts {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 20px;
+}
+.districts span {
+    padding: 10px 20px; background: var(--light); border: 1.5px solid #e9ecef;
+    border-radius: 12px; font-weight: 700; color: var(--secondary); transition: 0.2s;
+}
+.districts span:hover { background: var(--cyan); color: white; border-color: var(--cyan); }
+
+/* CTA */
+.cta { background: linear-gradient(135deg, var(--primary), var(--secondary)); padding: 80px 0; text-align: center; color: white; }
+.cta h2 { font-size: 2.5rem; margin-bottom: 15px; font-weight: 900; }
+.pulse-btn {
+    background: white; color: var(--primary); margin: 30px auto 0; width: fit-content;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,255,255,0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(255,255,255,0); }
+    100% { transform: scale(1); }
+}
+
+/* Footer */
+footer { background: #01012b; color: #ccc; padding: 80px 0 20px; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; margin-bottom: 50px; }
+.f-brand .logo.white { color: white; margin-bottom: 20px; }
+.f-brand p { line-height: 1.7; }
+.f-links h3, .f-contact h3 { color: white; margin-bottom: 25px; font-weight: 800; font-size: 1.2rem; }
+.f-links ul { list-style: none; }
+.f-links a { color: #ccc; text-decoration: none; line-height: 2.5; transition: 0.3s; }
+.f-links a:hover { color: var(--cyan); padding-right: 5px; }
+.f-contact p { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+.f-contact i { color: var(--cyan); }
+.bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; font-size: 0.85rem; }
+
+/* Floating */
+.floating { position: fixed; bottom: 30px; left: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 1000; }
+.floating a {
+    width: 60px; height: 60px; border-radius: 50%; display: flex;
+    align-items: center; justify-content: center; font-size: 1.6rem; color: white;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2); transition: 0.3s;
+}
+.f-wa { background: var(--whatsapp); }
+.f-call { background: var(--primary); }
+.floating a:hover { transform: scale(1.1) rotate(5deg); }
+
+/* Responsive */
+@media (max-width: 992px) {
+    .hero-grid { grid-template-columns: 1fr; text-align: center; }
+    .hero-actions { justify-content: center; }
+    .hero h1 { font-size: 2.4rem; }
+}
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed; top: 75px; right: -100%; width: 100%; background: white;
+        flex-direction: column; padding: 50px; transition: 0.4s;
+    }
+    .nav-links.active { right: 0; }
+    .menu-btn { display: block; font-size: 1.5rem; color: var(--primary); cursor: pointer; }
+    .nav-btn { width: 100%; text-align: center; }
+    .sec-title { font-size: 1.8rem; }
+}
+
+/* --- ضبط الهيدر (Navbar) --- */
+.menu-btn {
+    display: none; /* إخفاء علامة المنيو في الكمبيوتر */
+}
+
+@media (max-width: 992px) {
+    .menu-btn { display: block; } /* تظهر فقط في الموبايل */
+}
+
+/* --- ضبط الهيرو (Hero Section) --- */
+.hero {
+    padding: 140px 0 60px; /* مسافة تحت الهيدر */
+    background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+    overflow: hidden;
+    direction: rtl; /* التأكد من اتجاه النص */
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* النص يأخذ مساحة أكبر */
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-text {
+    text-align: right; /* محاذاة النص لليمين */
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--secondary);
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+    max-width: 600px;
+    margin-right: 0; /* لضمان الالتصاق باليمين */
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start; /* الأزرار تبدأ من اليمين */
+}
+
+/* ضبط الصورة */
+.hero-img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-img img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 30px;
+    box-shadow: 20px 20px 60px rgba(0, 119, 182, 0.1);
+    /* في حالة مكنتش الصورة شغالة، ده شكل جمالي احتياطي */
+    background: #e1f1f9;
+}
+
+/* --- ضبط الموبايل --- */
+@media (max-width: 992px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .hero-text {
+        text-align: center;
+    }
+    .hero p {
+        margin: 0 auto 30px;
+    }
+    .hero-actions {
+        justify-content: center;
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+}
+
+/* --- تنسيق قسم المميزات --- */
+.features {
+    padding: 100px 0;
+    background: #fdfdfd;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.title-line {
+    width: 80px;
+    height: 4px;
+    background: var(--cyan);
+    margin: 15px auto 0;
+    border-radius: 50px;
+}
+
+.feat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.feat-card {
+    background: var(--white);
+    padding: 50px 30px;
+    border-radius: 25px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+/* تأثير عند الوقوف بالماوس */
+.feat-card:hover {
+    transform: translateY(-12px);
+    border-color: var(--cyan);
+    box-shadow: 0 20px 40px rgba(0, 180, 216, 0.12);
+}
+
+/* تنسيق الأيقونات */
+.icon-wrapper {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-wrapper i {
+    font-size: 2.8rem;
+    color: var(--cyan);
+    z-index: 2;
+    transition: 0.3s;
+}
+
+.icon-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 180, 216, 0.08);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* شكل عضوي مميز */
+    animation: morph 6s linear infinite;
+}
+
+@keyframes morph {
+    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+    100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+}
+
+.feat-card h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--secondary);
+    margin-bottom: 15px;
+}
+
+.feat-card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.8;
+    padding: 0 10px;
+}
+
+/* موبايل */
+@media (max-width: 768px) {
+    .feat-card {
+        padding: 40px 20px;
+    }
+    .sec-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* --- تنسيق أحياء التغطية --- */
+.coverage {
+    padding: 100px 0;
+    background: #fcfdfe;
+}
+
+.sec-subtitle {
+    text-align: center;
+    color: #777;
+    margin-top: -40px;
+    margin-bottom: 50px;
+}
+
+.districts-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.districts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.districts span {
+    padding: 12px 25px;
+    background: #ffffff;
+    border: 1px solid #e1eef5;
+    border-radius: 50px;
+    font-weight: 700;
+    color: var(--secondary);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: default;
+}
+
+/* تأثير عند الوقوف على الحي */
+.districts span:hover {
+    background: var(--cyan);
+    color: white;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 180, 216, 0.2);
+    border-color: var(--cyan);
+}
+
+.districts span i {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* --- تنسيق قسم الاتصال (CTA) --- */
+.cta {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.cta-box {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    padding: 80px 40px;
+    border-radius: 30px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(3, 4, 94, 0.2);
+}
+
+/* إضافة شكل مائي خلفي */
+.cta-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 40%;
+    animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.cta-content h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 40px;
+}
+
+.pulse-btn {
+    background: #ffffff;
+    color: var(--primary) !important;
+    padding: 20px 50px;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin: 0 auto;
+    width: fit-content;
+    animation: pulse-white 2s infinite;
+}
+
+@keyframes pulse-white {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,255,255,0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(255,255,255,0); }
+    100% { transform: scale(1); }
+}
+
+/* للموبايل */
+@media (max-width: 768px) {
+    .districts span {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+    }
+    .cta-box {
+        padding: 50px 20px;
+    }
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+}
+/* --- تنسيق الأقسام الجديدة --- */
+.faq { padding: 80px 0; background: #fff; }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
+.faq-item { background: var(--light); padding: 25px; border-radius: 15px; border-right: 5px solid var(--cyan); }
+.faq-item h3 { font-size: 1.1rem; color: var(--secondary); margin-bottom: 10px; }
+.faq-item p { font-size: 0.95rem; color: #555; }
+
+.testimonials { padding: 80px 0; background: #f0f7ff; }
+.testi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.testi-card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: right; }
+.testi-card .stars { color: #ffc107; margin-bottom: 15px; }
+.testi-card h4 { margin-top: 15px; color: var(--primary); }
+
+@media (max-width: 768px) {
+    .faq-grid, .testi-grid { grid-template-columns: 1fr; }
+}
+/* --- تأثير النبض للبادج العلوي --- */
+.hero-badge {
+    background: rgba(0, 180, 216, 0.1); /* خلفية شفافة سماوية */
+    color: var(--cyan);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 180, 216, 0.3); /* إطار خفيف */
+    
+    /* تطبيق الأنيميشن */
+    animation: badge-pulse 2s infinite ease-in-out;
+    cursor: default;
+}
+
+/* تعريف أنيميشن النبض */
+@keyframes badge-pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 180, 216, 0.4);
+    }
+    70% {
+        transform: scale(1.05); /* تكبير بسيط */
+        box-shadow: 0 0 0 10px rgba(0, 180, 216, 0); /* توهج خارجي يتلاشى */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 180, 216, 0);
+    }
+}
+/* --- تنسيق قسم من نحن --- */
+.about {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.sub-title {
+    color: var(--cyan);
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--secondary);
+    line-height: 1.3;
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+/* قائمة المميزات داخل من نحن */
+.about-features {
+    list-style: none;
+}
+
+.about-features li {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.f-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--light);
+    color: var(--primary);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.about-features li:hover .f-icon {
+    background: var(--primary);
+    color: white;
+    transform: rotate(-10deg);
+}
+
+.f-txt h4 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--secondary);
+    margin-bottom: 5px;
+}
+
+.f-txt p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+/* صندوق الصورة */
+.about-img-box {
+    position: relative;
+}
+
+.main-img {
+    position: relative;
+    z-index: 1;
+}
+
+.main-img img {
+    width: 100%;
+    border-radius: 30px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+}
+
+/* بادج الخبرة */
+.img-badge {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    background: var(--secondary);
+    color: white;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(3,4,94,0.3);
+    z-index: 2;
+    border: 5px solid white;
+}
+
+.img-badge .num {
+    display: block;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--cyan);
+}
+
+.img-badge .lab {
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* للموبايل */
+@media (max-width: 992px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    .about-features li {
+        flex-direction: column;
+        align-items: center;
+    }
+    .img-badge {
+        right: 20px;
+        bottom: 20px;
+        padding: 15px;
+    }
+}
+/* --- تنسيق قسم الآراء لضمان الظهور --- */
+.testimonials {
+    padding: 80px 0;
+    background: #f0f7ff;
+    overflow: hidden;
+}
+
+.testi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.testi-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 119, 182, 0.05);
+    text-align: right;
+    border: 1px solid #eef2f5;
+}
+
+/* --- ضبط الفوتر والآراء على الموبايل --- */
+@media (max-width: 768px) {
+    /* توسيط عنوان السكشن */
+    .sec-title {
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+    }
+
+    /* توسيط الفوتر بالكامل */
+    footer {
+        text-align: center !important;
+    }
+
+    .footer-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 40px;
+    }
+
+    .f-brand, .f-links, .f-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* توسيط قائمة الروابط في الفوتر */
+    .f-links ul {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .f-links a {
+        line-height: 3;
+    }
+
+    /* توسيط معلومات التواصل */
+    .f-contact p {
+        justify-content: center;
+    }
+
+    /* ضبط كروت الآراء في الموبايل */
+    .testi-card {
+        margin: 0 10px;
+        text-align: center; /* اختياري: توسيط الكلام داخل الكارت في الموبايل */
+    }
+
+    .testi-card .stars {
+        justify-content: center;
+        display: flex;
+    }
+}
